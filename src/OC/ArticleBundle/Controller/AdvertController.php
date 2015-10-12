@@ -2,6 +2,7 @@
     
     namespace OC\ArticleBundle\Controller;
     
+    use OC\ArticleBundle\Entity\Advert;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Symfony\Component\HttpFoundation\Response;
    
@@ -39,7 +40,8 @@
             $advert->setTitle($_POST['nom']);
             $advert->setAuthor($_POST['courriel']);
             $advert->setContents($_POST['message']);
-            //$advert->setimage('');
+            $advert -> setContent("test");
+            $advert->setimage("test");
             // On peut ne pas définir ni la date ni la publication,
             // car ces attributs sont définis automatiquement dans le constructeur
             
@@ -56,7 +58,10 @@
            /* if ($request->isMethod('POST')) {
                 $request->getSession()->getFlashBag()->add('notice', 'Formulaire bien enregistré.');
                 return $this->redirect($this->generateUrl('oc_articlebundle_view', array('id' => $advert->getId())));*/
-            exit;
+             return new Response("Formulaire rempli");
+            return $this->render('OCArticleBundle:Advert:index.html.twig');
+           
+        
             }
             
          
@@ -74,7 +79,7 @@
         
         public function afficherformulaireAction()   {
 return $this->render('OCArticleBundle:Advert:index.html.twig');
-    }
+     }
             
      }
     
