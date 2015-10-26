@@ -1,21 +1,26 @@
 articleafficher:
-    path:     /afficher-hw
+    path:     /afficher
     defaults: { _controller: OCArticleBundle:Advert:afficher }
 
+articleaccueil:
+    path:     /accueil
+    defaults: { _controller: OCArticleBundle:Advert:accueil}
+
+
 articlemodifier:
-    path:     /modifier-hw
+    path:     /modifier
     defaults: { _controller: OCArticleBundle:Advert:modifier }
 
 articlesupprimer:
-    path:     /supprimer-hw
+    path:     /supprimer
     defaults: { _controller: OCArticleBundle:Advert:supprimer }
 
 articleajouter:
-    path:     /ajouter-hw
+    path:     /ajouter
     defaults: { _controller: OCArticleBundle:Advert:ajouter }
 
 formulaire:
-    path:     /afficherformulaire-hw
+    path:     /afficherformulaire
     defaults: { _controller: OCArticleBundle:Advert:afficherformulaire }
 
 

@@ -16,6 +16,13 @@
     return new Response("afficher");
         }
         
+        
+        public function accueilAction()
+        {
+            return $this->render('OCArticleBundle:Advert:accueil.html.twig');
+        }
+
+        
         public function modifierAction()
         {
             /*$content = $this
