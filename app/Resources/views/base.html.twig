@@ -1,13 +1,106 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/css/tuto.css" rel="stylesheet">
+<!-- Un peu de style pour la visualisation -->
+<style type="text/css">
+.col-md-8, .col-sm-10 { line-height: 200px; }
+.col-md-12 { line-height: 80px; }
+
+</style>
+<title> Blog de Cinéma </title>
+</head>
+<body>
+<body style="background:#efe6df">
+<div class="container">
+
+<header class="row">
+<div class="col-md-12">
+<!-- <h1><center> Blog de cinéma </center> </h1> -->
+<!-- <p> <center> Sur ce blog vous pouvez trouvez toutes les actualités concernant le cinéma.</center> </p> -->
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<ul class="nav navbar-nav">
+<li class="active"> <a href="#">Accueil</a> </li>
+</ul>
+<form class="navbar-form navbar-right inline-form">
+<div class="form-group">
+<input type="search" class="input-sm form-control" placeholder="Recherche">
+<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+</div>
+</form>
+</div>
+</nav>
+<div class="banniere">
+
+<img src={{ asset('bundles/ArticleBundle/images/fond.png')}} width="1150" height="150" alt="test">
+</div>
+</div>
+
+</header>
+
+<div class="row">
+
+<div class="col-sm-2">
+<div class="row">
+
+</div>
+</div>
+
+<section class="col-sm-10 col-md-8">
+<tr>
+<th>Article 1 </th>
+<br> <a href="http://127.0.0.1:8000/afficher" target="_blank">Lire la suite ... </a> </br>
+
+<th>Article 2 </th>
+<br> <a href="http://127.0.0.1:8000/afficher" target="_blank">Lire la suite ... </a> </br>
+<th>Article 3 </th>
+<br> <a href="http://127.0.0.1:8000/afficher" target="_blank">Lire la suite ... </a> </br>
+
+
+</tr>
+
+</section>
+
+<div class="clearfix visible-sm-block"></div>
+
+<div class="col-md-2">
+<div class="row">
+<aside class="col-md-12">
+<button type="button" class="btn btn-info">Ajouter un article</button>
+
+</aside>
+<aside class="col-md-7">
+<h5>Box Office</h5>
+<br>1. ffffff</br>
+<br>2. ffffff</br>
+<br>3. ffffff</br>
+
+
+
+</aside>
+</div>
+</div>
+
+</div>
+
+<footer class="row">
+<div class="col-md-12">
+<div class="container">
+<ul class="pagination">
+<li><a href="#">&laquo;</a></li>
+<li><a href="#">1</a></li>
+<li><a href="#">2</a></li>
+<li><a href="#">3</a></li>
+<li><a href="#">&raquo;</a></li>
+</ul>
+</div>
+Copyright © 2015 - Kevin et Nivaashini
+</div>
+</footer>
+
+</div>
+</body>
 </html>
