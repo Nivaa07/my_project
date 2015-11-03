@@ -6797,5 +6797,14 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+.p {
+      border-width:1px;
+      border-style:dotted;
+      border-color:black;
+  }
+.span {
+    border:1px solid red;
+    padding:3px;
+}
 }
 /*# sourceMappingURL=bootstrap.css.map */
