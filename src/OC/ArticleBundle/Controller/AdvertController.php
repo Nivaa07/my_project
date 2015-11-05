@@ -13,9 +13,23 @@
         /*$content = $this
             ->get('templating')
             ->render('OCArticleBundle:Advert:index.html.twig');*/
-    return new Response("afficher");
-        }
+      return $this->render('OCArticleBundle:Advert:afficher.html.twig');        }
         
+        public function afficher2Action()
+        {
+            /*$content = $this
+             ->get('templating')
+             ->render('OCArticleBundle:Advert:index.html.twig');*/
+            return $this->render('OCArticleBundle:Advert:afficher2.html.twig');        }
+        
+        public function afficher3Action()
+        {
+            /*$content = $this
+             ->get('templating')
+             ->render('OCArticleBundle:Advert:index.html.twig');*/
+            return $this->render('OCArticleBundle:Advert:afficher3.html.twig');        }
+    
+
         
         public function accueilAction()
         {
@@ -36,7 +50,7 @@
             /*$content = $this
             ->get('templating')
             ->render('OCArticleBundle:Advert:supprimer.html.twig');*/
-            return new Response("supprimer");
+            return $this->render('OCArticleBundle:Advert:supprimer.html.twig');
         }
        
         public function ajouterAction()

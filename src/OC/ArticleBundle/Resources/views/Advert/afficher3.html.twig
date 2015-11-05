@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="bootstrap/css/tuto.css" rel="stylesheet">
 <!-- Un peu de style pour la visualisation -->
 <style type="text/css">
 .col-md-8, .col-sm-10 { line-height: 200px; }
 .col-md-12 { line-height: 80px; }
-
+<meta charset="utf-8" />
+<title> Article 1 </title>
 </style>
-        <meta charset="utf-8" />
-        <title>Titre</title>
-    </head>
-    
-    <body>
+
+</head>
+
+<body>
 <body style="background:#efe6df">
 <div class="container">
 
@@ -24,8 +24,8 @@
 <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <ul class="nav navbar-nav">
-<li class="active"> <a href="#">Accueil</a> </li>
-<li class="active"> <a href="#">Ajouter un article</a> </li>
+<li class="active"> <a href="http://127.0.0.1:8000">Accueil</a> </li>
+<li class="active"><a href="http://127.0.0.1:8000/afficherformulaire"> Ajouter un article </a> </li>
 </ul>
 <form class="navbar-form navbar-right inline-form">
 <div class="form-group">
@@ -44,23 +44,31 @@
 <br> </br>
 </header>
 
+<div class="panel panel-default">
+<div class="panel-heading">Article 3 </div>
+<div class="panel-body">Écrire l'article </div>
+<br> </br>
 
-      <form action="{{path('articleajouter')}}" method="post">
-            <div>
-                <label for="nom">Nom :</label>
-                <input type="text" name="nom" />
-            </div>
-            <div>
-                <label for="courriel">Courriel :</label>
-                <input type="email" name="courriel" />
-            </div>
-            <div>
-                <label for="message">Message :</label>
-                <textarea name="message"></textarea>
-            </div>
+<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-ban-circle"></span> <a href="http://127.0.0.1:8000/supprimer"</a>Supprimer l'article </button>
+<button type="submit" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-arrow-down"></span> Modifier l'article </button>
 
-        <input type="submit"></input>
-            </div>
-        </form> 
-    </body>
+
+<!--  <form action="{{path('articleajouter')}}" method="post">
+<div>
+<label for="nom">Nom :</label>
+<input type="text" name="nom" />
+</div>
+<div>
+<label for="courriel">Courriel :</label>
+<input type="email" name="courriel" />
+</div>
+<div>
+<label for="message">Message :</label>
+<textarea name="message"></textarea>
+</div>
+
+<input type="submit"></input>
+</div>
+</form> -->
+</body>
 </html>

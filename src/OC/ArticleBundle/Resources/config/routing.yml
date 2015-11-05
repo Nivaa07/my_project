@@ -1,6 +1,14 @@
-articleafficher:
+articleafficher1:
     path:     /afficher
     defaults: { _controller: OCArticleBundle:Advert:afficher }
+
+articleafficher2:
+    path:     /afficher2
+    defaults: { _controller: OCArticleBundle:Advert:afficher2 }
+
+articleafficher3:
+    path:     /afficher3
+    defaults: { _controller: OCArticleBundle:Advert:afficher3 }
 
 articleaccueil:
     path:     /accueil
