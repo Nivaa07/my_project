@@ -42,8 +42,8 @@
             /*$content = $this
             ->get('templating')
             ->render('OCArticleBundle:Advert:modifier.html.twig');*/
-
-            return new Response("modifier");
+            return $this->render('OCArticleBundle:Advert:modifier.html.twig');
+            
         }
         public function supprimerAction()
         {
@@ -101,6 +101,11 @@
         public function afficherformulaireAction()   {
 return $this->render('OCArticleBundle:Advert:index.html.twig');
      }
+        
+        public function boxofficeAction()   {
+            return $this->render('OCArticleBundle:Advert:boxoffice.html.twig');
+        }
+
             
      }
     

@@ -31,5 +31,8 @@ formulaire:
     path:     /afficherformulaire
     defaults: { _controller: OCArticleBundle:Advert:afficherformulaire }
 
+boxoffice:
+    path:     /boxoffice
+    defaults: { _controller: OCArticleBundle:Advert:boxoffice }
 
 
