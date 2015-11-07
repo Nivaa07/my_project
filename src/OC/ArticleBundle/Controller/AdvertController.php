@@ -8,28 +8,44 @@
    
     class AdvertController extends Controller
     {
+        public function afficher2Action($id)
+        {
+            $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('OCArticleBundle:Advert')
+            ;
+            $Article = $repository->find($id);
+            
+            if($Article === null) {
+                throw new NotFoundHttpException("Il n'a d'article".id.".");
+            }
+            
+            /*$content = $this
+             ->get('templating')
+             ->render('OCArticleBundle:Advert:index.html.twig');*/
+            
+            return $this->render('OCArticleBundle:Advert:afficher2.html.twig',array('article'=> $Article));     }
+        
+        
         public function afficherAction()
         {
-        /*$content = $this
-            ->get('templating')
-            ->render('OCArticleBundle:Advert:index.html.twig');*/
-      return $this->render('OCArticleBundle:Advert:afficher.html.twig');        }
-        
-        public function afficher2Action()
-        {
+            
+            $repository = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('OCArticleBundle:Advert')
+            ;
+            $Listarticles = $repository->findAll();
+            
+            
             /*$content = $this
              ->get('templating')
              ->render('OCArticleBundle:Advert:index.html.twig');*/
-            return $this->render('OCArticleBundle:Advert:afficher2.html.twig');        }
+          
+            return $this->render('OCArticleBundle:Advert:afficher.html.twig',array('ListArticles'=> $Listarticles));
         
-        public function afficher3Action()
-        {
-            /*$content = $this
-             ->get('templating')
-             ->render('OCArticleBundle:Advert:index.html.twig');*/
-            return $this->render('OCArticleBundle:Advert:afficher3.html.twig');        }
-    
-
+        }
         
         public function accueilAction()
         {
@@ -45,11 +61,27 @@
             return $this->render('OCArticleBundle:Advert:modifier.html.twig');
             
         }
-        public function supprimerAction()
+        public function supprimerAction($id)
         {
-            /*$content = $this
-            ->get('templating')
-            ->render('OCArticleBundle:Advert:supprimer.html.twig');*/
+            // On récupère l'EntityManager
+            $em = $this->getDoctrine()->getManager();
+            
+            $repository = $em
+            ->getRepository('OCArticleBundle:Advert')
+            ;
+            $Article = $repository->find($id);
+            
+            if($Article === null) {
+                throw new NotFoundHttpException("Il n'a d'article".id.".");
+            }
+            
+            // Étape 1 : On « persiste » l'entité
+            $em->remove($Article);
+            
+            // Étape 2 : On « flush » tout ce qui a été persisté avant
+            $em->flush();
+            
+
             return $this->render('OCArticleBundle:Advert:supprimer.html.twig');
         }
        
@@ -79,8 +111,9 @@
            /* if ($request->isMethod('POST')) {
                 $request->getSession()->getFlashBag()->add('notice', 'Formulaire bien enregistré.');
                 return $this->redirect($this->generateUrl('oc_articlebundle_view', array('id' => $advert->getId())));*/
-             return new Response("Formulaire rempli");
-            return $this->render('OCArticleBundle:Advert:index.html.twig');
+            
+           return $this->redirect($this ->generateUrl('articleafficher2', array ('id' => $advert ->getId())));
+            /*return $this->render('OCArticleBundle:Advert:index.html.twig');*/
            
         
             }
@@ -104,6 +137,10 @@ return $this->render('OCArticleBundle:Advert:index.html.twig');
         
         public function boxofficeAction()   {
             return $this->render('OCArticleBundle:Advert:boxoffice.html.twig');
+        }
+        
+        public function testAction()   {
+            return $this->render('OCArticleBundle:Advert:test.html.twig');
         }
 
             

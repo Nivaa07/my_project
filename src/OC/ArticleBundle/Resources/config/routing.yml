@@ -1,27 +1,20 @@
-articleafficher1:
-    path:     /afficher
+home:
+    path:     /
     defaults: { _controller: OCArticleBundle:Advert:afficher }
 
 articleafficher2:
-    path:     /afficher2
+    path:     /afficher/{id}
     defaults: { _controller: OCArticleBundle:Advert:afficher2 }
-
-articleafficher3:
-    path:     /afficher3
-    defaults: { _controller: OCArticleBundle:Advert:afficher3 }
-
-articleaccueil:
-    path:     /accueil
-    defaults: { _controller: OCArticleBundle:Advert:accueil}
 
 
 articlemodifier:
-    path:     /modifier
+    path:     /modifier/{id}
     defaults: { _controller: OCArticleBundle:Advert:modifier }
 
 articlesupprimer:
-    path:     /supprimer
+    path:     /supprimer/{id}
     defaults: { _controller: OCArticleBundle:Advert:supprimer }
+
 
 articleajouter:
     path:     /ajouter
@@ -35,4 +28,6 @@ boxoffice:
     path:     /boxoffice
     defaults: { _controller: OCArticleBundle:Advert:boxoffice }
 
-
+test:
+    path:     /test
+    defaults: { _controller: OCArticleBundle:Advert:test }

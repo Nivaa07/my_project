@@ -1,80 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="bootstrap/css/tuto.css" rel="stylesheet">
-<!-- Un peu de style pour la visualisation -->
-<style type="text/css">
-.col-md-8, .col-sm-10 { line-height: 200px; }
-.col-md-12 { line-height: 80px; }
+{% extends "::base.html.twig" %}
 
-</style>
- <title> Ajout d'un article'</title>
-<meta charset="utf-8" />
-       
-    </head>
-    
-    <body>
-<body style="background:#efe6df">
-<div class="container">
+{% block body %}
 
-<header class="row">
-<div class="col-md-15">
-<!-- <h1><center> Blog de cinéma </center> </h1> -->
-<!-- <p> <center> Sur ce blog vous pouvez trouvez toutes les actualités concernant le cinéma.</center> </p> -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid">
-<ul class="nav navbar-nav">
-<li class="active"> <a href="http://127.0.0.1:8000">Accueil</a> </li>
-<li class="active"> <a href="#">Les articles</a> </li>
-<li class="active"> <a href="http://127.0.0.1:8000/boxoffice">Box-Office</a> </li>
-<li class="active"> <a href="#">Ajouter un article</a> </li>
-</ul>
-<form class="navbar-form navbar-right inline-form">
-<div class="form-group">
-<input type="search" class="input-sm form-control" placeholder="Recherche">
-<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-
-</div>
-</form>
-</div>
-</nav>
-<div class="banniere">
-<br> </br>
-<br> </br>
-<img src={{ asset('bundles/ArticleBundle/images/fond.png')}} width="1150" height="150" alt="test">
-</div>
-</div>
-<br> </br>
-</header>
 
 
       <form action="{{path('articleajouter')}}" method="post">
             <div>
-                <label for="nom">Nom :</label>
+                <label for="nom"> Titre de l'article :</label>
                 <input type="text" name="nom" />
             </div>
+            <br> </br>
             <div>
-                <label for="courriel">Courriel :</label>
+                <label for="courriel"> Auteur :</label>
                 <input type="email" name="courriel" />
             </div>
+            <br> </br>
             <div>
-                <label for="message">Message :</label>
+                <label for="message"> Contenu de l'article :</label>
                 <textarea name="message"></textarea>
             </div>
+
 
         <input type="submit"></input>
             </div>
         </form>
 
 
-<footer class="row">
-<div class="col-md-12">
-<div class="container">
-
-<br> </br>
-Copyright © 2015 - Kevin et Nivaashini </div>
-</div>
-</footer>
-    </body>
-</html>
+{% endblock %}
