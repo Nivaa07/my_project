@@ -25,7 +25,9 @@
              ->get('templating')
              ->render('OCArticleBundle:Advert:index.html.twig');*/
             
-            return $this->render('OCArticleBundle:Advert:afficher2.html.twig',array('article'=> $Article));     }
+            return $this->render('OCArticleBundle:Advert:afficher2.html.twig',array('article'=> $Article));
+        
+        }
         
         
         public function afficherAction()
@@ -61,6 +63,7 @@
             return $this->render('OCArticleBundle:Advert:modifier.html.twig');
             
         }
+        
         public function supprimerAction($id)
         {
             // On récupère l'EntityManager
@@ -84,6 +87,7 @@
 
             return $this->render('OCArticleBundle:Advert:supprimer.html.twig');
         }
+        
        
         public function ajouterAction()
         {

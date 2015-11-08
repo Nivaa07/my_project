@@ -1,40 +1,16 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-<!-- <div class="panel panel-default">
-<div class="panel-heading">Article 1 </div>
-<div class="panel-body">Écrire l'article </div>
-<br> </br>
 
-
-</div> -->
 
 {% for i in ListArticles %}
 <div class="panel panel-default">
 <div class="panel-heading"> {{i.title}} </div>
-<div class="panel-body"> {{i.author}} </div>
-<br> <a href="{{ path('articleafficher2', {'id':i.id}) }}">     Lire la suite ... </a> </br> </div>
+<div class="panel-heading"> De {{i.author}} </div>
+<!-- <div class="panel-body"> {{i.contents}} </div> -->
+<br> <a href="{{ path('articleafficher2', {'id':i.id}) }}">     Lire le contenu ... </a> </br> </div>
 {% else %}
 Pas d'articles
 {% endfor  %}
 
-
-
-<!--  <form action="{{path('articleajouter')}}" method="post">
-<div>
-<label for="nom">Nom :</label>
-<input type="text" name="nom" />
-</div>
-<div>
-<label for="courriel">Courriel :</label>
-<input type="email" name="courriel" />
-</div>
-<div>
-<label for="message">Message :</label>
-<textarea name="message"></textarea>
-</div>
-
-<input type="submit"></input>
-</div>
-</form> -->
 {% endblock %}

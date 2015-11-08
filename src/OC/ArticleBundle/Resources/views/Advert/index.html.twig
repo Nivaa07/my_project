@@ -4,26 +4,28 @@
 
 
 
-      <form action="{{path('articleajouter')}}" method="post">
+      <form  class="col-lg-6" action="{{path('articleajouter')}}" method="post">
             <div>
                 <label for="nom"> Titre de l'article :</label>
-                <input type="text" name="nom" />
+                <input type="text" class="form-control"name="nom" />
             </div>
             <br> </br>
             <div>
-                <label for="courriel"> Auteur :</label>
-                <input type="email" name="courriel" />
+                <label for="courriel"> Nom/ Mail de l'auteur :</label>
+                <input type="email"class="form-control" name="courriel" />
             </div>
             <br> </br>
-            <div>
+           <div>
                 <label for="message"> Contenu de l'article :</label>
-                <textarea name="message"></textarea>
+                <textarea class="form-control"name="message"></textarea>
             </div>
 
-
+        <br> </br>
         <input type="submit"></input>
             </div>
         </form>
+
+
 
 
 {% endblock %}

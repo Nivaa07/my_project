@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+{% block stylesheets %}
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="bootstrap/css/tuto.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" type="text/css" />
+{% endblock %}
 <!-- Un peu de style pour la visualisation -->
 <style type="text/css">
 .col-md-8, .col-sm-10 { line-height: 200px; }
