@@ -4,7 +4,7 @@
 
 
 
-      <form  class="col-lg-6" action="{{path('articleajouter')}}" method="post">
+      <form  class="col-lg-6" action="{{path('articleajouter')}}" method="post" enctype="multipart/form-data">
             <div>
                 <label for="nom"> Titre de l'article :</label>
                 <input type="text" class="form-control"name="nom" />
@@ -19,7 +19,12 @@
                 <label for="message"> Contenu de l'article :</label>
                 <textarea class="form-control"name="message"></textarea>
             </div>
+            <br> </br>
+            <div>
+                 <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                Fichier : <input type="file" name="avatar">
 
+            </div>
         <br> </br>
         <input type="submit"></input>
             </div>

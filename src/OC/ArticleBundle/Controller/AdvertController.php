@@ -21,9 +21,6 @@
                 throw new NotFoundHttpException("Il n'a d'article".id.".");
             }
             
-            /*$content = $this
-             ->get('templating')
-             ->render('OCArticleBundle:Advert:index.html.twig');*/
             
             return $this->render('OCArticleBundle:Advert:afficher2.html.twig',array('article'=> $Article));
         
@@ -49,39 +46,63 @@
         
         }
         
+        
+        
         public function accueilAction()
         {
             return $this->render('OCArticleBundle:Advert:accueil.html.twig');
         }
 
         
-        public function modifierAction()
+        
+        
+        
+        public function modifierAction(Advert $advert)
         {
-            /*$content = $this
-            ->get('templating')
-            ->render('OCArticleBundle:Advert:modifier.html.twig');*/
-            return $this->render('OCArticleBundle:Advert:modifier.html.twig');
+            
+         // On récupère l'EntityManager
+            $em = $this->getDoctrine()->getManager();
+            
+                      // Étape 1 : On « persiste » l'entité
+            if(isset($_POST['valider'])) {
+                $advert->setTitle($_POST['nom']);
+                $advert->setAuthor($_POST['courriel']);
+                $advert->setContent($_POST['message']);
+                
+                $em = $this->getDoctrine()->getManager();
+            $em->persist($advert);
+            
+            // Étape 2 : On « flush » tout ce qui a été persisté avant
+            $em->flush();
+            
+          
+            
+            return $this->redirect($this ->generateUrl('articleafficher2', array ('id' => $advert ->getId())));
+            }
+            return $this->render('OCArticleBundle:Advert:index2.html.twig',array ('advert' => $advert)) ;
+            
             
         }
+
+        
+        
         
         public function supprimerAction($id)
         {
             // On récupère l'EntityManager
             $em = $this->getDoctrine()->getManager();
             
-            $repository = $em
-            ->getRepository('OCArticleBundle:Advert')
-            ;
+            $repository = $em->getRepository('OCArticleBundle:Advert');
             $Article = $repository->find($id);
             
             if($Article === null) {
                 throw new NotFoundHttpException("Il n'a d'article".id.".");
             }
             
-            // Étape 1 : On « persiste » l'entité
+            // Étape 1 : On « retire » l'entité
             $em->remove($Article);
             
-            // Étape 2 : On « flush » tout ce qui a été persisté avant
+            // Étape 2 : On « flush » tout ce qui a été retiré avant
             $em->flush();
             
 
@@ -96,8 +117,8 @@
             $advert = new Advert();
             $advert->setTitle($_POST['nom']);
             $advert->setAuthor($_POST['courriel']);
-            $advert->setContents($_POST['message']);
-            $advert -> setContent("test");
+            $advert->setContent($_POST['message']);
+          
             $advert->setimage("test");
             // On peut ne pas définir ni la date ni la publication,
             // car ces attributs sont définis automatiquement dans le constructeur
@@ -112,39 +133,33 @@
             $em->flush();
             
             // Reste de la méthode qu'on avait déjà écrit
-           /* if ($request->isMethod('POST')) {
-                $request->getSession()->getFlashBag()->add('notice', 'Formulaire bien enregistré.');
-                return $this->redirect($this->generateUrl('oc_articlebundle_view', array('id' => $advert->getId())));*/
+       
             
            return $this->redirect($this ->generateUrl('articleafficher2', array ('id' => $advert ->getId())));
-            /*return $this->render('OCArticleBundle:Advert:index.html.twig');*/
+       
            
         
             }
             
          
-            /*$content = $this
-            ->get('templating')
-            ->render('OCArticleBundle:Advert:ajouter.html.twig');*/
-            /*$_POST['myVar'];
-            $e=new Advert();
-            $e -> setName($_POST['name']);
-            
-        
-           
-        } */
+ 
 
         
         public function afficherformulaireAction()   {
 return $this->render('OCArticleBundle:Advert:index.html.twig');
      }
         
+        public function modifierformulaireAction()   {
+            return $this->render('OCArticleBundle:Advert:index2.html.twig');
+        }
+
+        
         public function boxofficeAction()   {
             return $this->render('OCArticleBundle:Advert:boxoffice.html.twig');
         }
         
-        public function testAction()   {
-            return $this->render('OCArticleBundle:Advert:test.html.twig');
+        public function nousAction()   {
+            return $this->render('OCArticleBundle:Advert:nous.html.twig');
         }
 
             

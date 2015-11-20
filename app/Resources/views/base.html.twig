@@ -14,19 +14,20 @@
 </style>
 <title> Blog de Cinéma </title>
 </head>
-<body>
-<body style="background:#efe6df">
+
+<body style="background:#efe6df"id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div class="container">
 
+
+
 <header class="row">
-<div class="col-md-15">
-
-
+<div class="col-md-13">
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
 <ul class="nav navbar-nav " "dropdown-menu">
 <li class="active"> <a href="http://127.0.0.1:8000">Accueil </a></li>
 <li class="active"> <a href="http://127.0.0.1:8000/boxoffice">Box-Office</a> </li>
+<li class="active"><a href="http://127.0.0.1:8000/nous"> À propos de nous </a> </li>
 <li class="active"><a href="http://127.0.0.1:8000/afficherformulaire"> Ajouter un article </a> </li>
 </ul>
 <form class="navbar-form navbar-right inline-form">
@@ -38,15 +39,17 @@
 </form>
 </div>
 </nav>
-<div class="banniere">
+ <div class="banniere">
 <br> </br>
 <br> </br>
-<img src={{ asset('bundles/ArticleBundle/images/fond.png')}} width="1150" height="150" alt="test">
+<p align="center"> <img src={{ asset('bundles/ArticleBundle/images/fond.png')}}> </p>
 </div>
 </div>
+ <!-- width="1150" height="150" alt="test" -->
 <h1><center> Bienvenue sur notre blog  </center> </h1>
 <p> <center> Sur ce blog vous pouvez trouver toutes les actualités concernant le cinéma.</center> </p>
 <br> </br>
+
 </header>
 
 {% block body %}

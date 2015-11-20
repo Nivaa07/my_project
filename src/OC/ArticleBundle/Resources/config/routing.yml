@@ -24,9 +24,20 @@ formulaire:
     path:     /afficherformulaire
     defaults: { _controller: OCArticleBundle:Advert:afficherformulaire }
 
+
+formulairemodifier:
+    path:     /modifierformulaire
+    defaults: { _controller: OCArticleBundle:Advert:modifierformulaire }
+
+
 boxoffice:
     path:     /boxoffice
     defaults: { _controller: OCArticleBundle:Advert:boxoffice }
+
+nous:
+    path:     /nous
+    defaults: { _controller: OCArticleBundle:Advert:nous }
+
 
 test:
     path:     /test

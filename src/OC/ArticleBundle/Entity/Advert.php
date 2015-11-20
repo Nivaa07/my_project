@@ -49,12 +49,7 @@ class Advert
      */
     private $content;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="contents", type="text")
-     */
-    private $contents;
+    
 
     /**
      * @var string
@@ -176,30 +171,7 @@ class Advert
         return $this->content;
     }
 
-    /**
-     * Set contents
-     *
-     * @param string $contents
-     *
-     * @return Advert
-     */
-    public function setContents($contents)
-    {
-        $this->contents = $contents;
-
-        return $this;
-    }
-
-    /**
-     * Get contents
-     *
-     * @return string
-     */
-    public function getContents()
-    {
-        return $this->contents;
-    }
-
+   
     /**
      * Set image
      *

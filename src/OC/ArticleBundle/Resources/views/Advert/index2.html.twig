@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+
+
+<form  class="col-lg-6" action="{{ path('articlemodifier', {'id':advert.id}) }}" method="post" enctype="multipart/form-data" id="test">
+            <div>
+                <label for="nom"> Titre de l'article :</label>
+<input type="text" class="form-control" name="nom" value="{{advert.title}}"/>
+            </div>
+            <br> </br>
+            <div>
+                <label for="courriel"> Nom/ Mail de l'auteur :</label>
+                <input type="email"class="form-control" name="courriel" value="{{advert.author}}" />
+            </div>
+            <br> </br>
+           <div>
+<label for="message"> Contenu de l'article :</label>
+<textarea form= "test" class="form-control"name="message"> {{advert.content}}</textarea>
+            </div>
+            <br> </br>
+          <!--  <div>
+                <label for="icone"> Insérer une image  :</label>
+                <input type="file" name="icone" />
+
+            </div> -->
+        <br> </br>
+        <input type="submit" name="valider"></input>
+            </div>
+        </form>
+
+
+
+
+
+{% endblock %}
