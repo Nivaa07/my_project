@@ -119,6 +119,10 @@
             $advert->setAuthor($_POST['courriel']);
             $advert->setContent($_POST['message']);
             $advert->setimage("test");
+            
+            
+            
+            
             // On peut ne pas définir ni la date ni la publication,
             // car ces attributs sont définis automatiquement dans le constructeur
             
