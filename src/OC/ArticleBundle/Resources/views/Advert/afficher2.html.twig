@@ -6,9 +6,11 @@
 <div class="panel-heading">  {{article.title}} </div>
 <div class="panel-heading"> De {{article.author}} le {{ article.date|date('d/m/Y') }} </div>
 <div class="panel-body"> {{article.content}} </div>
-<br> </br>
-<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-ban-circle"></span> <a href="{{ path('articlesupprimer', {'id':article.id}) }}""</a> Supprimer l'article </button>
-<button type="submit" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-arrow-down"></span> <a href="{{ path('articlemodifier', {'id':article.id}) }}"</a>Modifier l'article </button>
+    <br> </br>
+        <button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-ban-circle"></span> <a href="{{ path('articlesupprimer', {'id':article.id}) }}""</a> Supprimer l'article </button>
+
+
+        <button type="submit" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-arrow-down"></span> <a href="{{ path('articlemodifier', {'id':article.id}) }}"</a> Modifier l'article </button>
 </div>
 
 

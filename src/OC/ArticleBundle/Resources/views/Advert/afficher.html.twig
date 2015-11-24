@@ -5,8 +5,8 @@
 
 {% for i in ListArticles %}
 <div class="panel panel-default">
-<div class="panel-heading"> {{i.title}} </div>
-<div class="panel-heading"> De {{i.author}} le {{ i.date|date('d/m/Y') }} </div>
+<div class="panel-heading"> <b> {{i.title}} </b>  </div>
+<div class="panel-heading">  De {{i.author}} le {{ i.date|date('d/m/Y') }} </div>
 <!-- <div class="panel-body"> {{i.content}} </div> -->
 <br> <a href="{{ path('articleafficher2', {'id':i.id}) }}">     Lire le contenu ... </a> </br> </div>
 {% else %}

@@ -1,70 +1,124 @@
 <!DOCTYPE html>
-<html>
-<head>
-{% block stylesheets %}
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="bootstrap/css/tuto.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" type="text/css" />
-{% endblock %}
-<!-- Un peu de style pour la visualisation -->
-<style type="text/css">
-.col-md-8, .col-sm-10 { line-height: 200px; }
-.col-md-12 { line-height: 80px; }
+<html lang="en">
 
-</style>
-<title> Blog de Cinéma </title>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Blog de Cinéma</title>
+<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}"
+<!-- Bootstrap Core CSS -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="bootstrap/css/clean-blog.min.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 </head>
 
-<body style="background:#efe6df"id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<div class="container">
+<body>
 
-
-
-<header class="row">
-<div class="col-md-13">
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 <div class="container-fluid">
-<ul class="nav navbar-nav " "dropdown-menu">
-<li class="active"> <a href="http://127.0.0.1:8000">Accueil </a></li>
-<li class="active"> <a href="http://127.0.0.1:8000/boxoffice">Box-Office</a> </li>
-<li class="active"><a href="http://127.0.0.1:8000/nous"> À propos de nous </a> </li>
-<li class="active"><a href="http://127.0.0.1:8000/afficherformulaire"> Ajouter un article </a> </li>
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header page-scroll">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right" "dropdown-menu">
+<li>
+<a href="{{ path('home')}}">Accueil</a>
+</li>
+<li>
+<a href="{{ path('boxoffice')}}">Box-Office</a>
+</li>
+<li>
+<a href="{{ path('nous')}}">À propos de nous</a>
+</li>
+<li>
+<a href="{{ path('formulaire')}}"> Ajouter un article</a>
+</li>
 </ul>
-<form class="navbar-form navbar-right inline-form">
-<div class="form-group">
-<input type="search" class="input-sm form-control" placeholder="Recherche">
-<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-
 </div>
-</form>
+<!-- /.navbar-collapse -->
 </div>
+<!-- /.container -->
 </nav>
- <div class="banniere">
-<br> </br>
-<br> </br>
-<p align="center"> <img src={{ asset('bundles/ArticleBundle/images/fond.png')}}> </p>
-</div>
-</div>
- <!-- width="1150" height="150" alt="test" -->
-<h1><center> Bienvenue sur notre blog  </center> </h1>
-<p> <center> Sur ce blog vous pouvez trouver toutes les actualités concernant le cinéma.</center> </p>
-<br> </br>
 
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('bootstrap/img/home-bg.jpg')">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="site-heading">
+<br> </br>
+<h1>Blog de Cinéma </h1>
+<hr class="small">
+<span class="subheading">Toutes les nouveautés du cinéma </span>
+</div>
+</div>
+</div>
+</div>
 </header>
 
-{% block body %}
-{% endblock %}
-
-
-<footer class="row">
-<div class="col-md-12">
+<!-- Main Content -->
 <div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    {% block body %}
+    {% endblock %}
 
-<br> </br>
-Copyright © 2015 - Kevin et Nivaashini </div>
+</div>
+</div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<p class="copyright text-muted">Copyright &copy; Kevin et Nivaashini 2015</p>
+</div>
+</div>
 </div>
 </footer>
 
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/clean-blog.min.js"></script>
 
 </body>
+
 </html>
