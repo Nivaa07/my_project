@@ -1,4 +1,4 @@
-my_project
+Projet de Programmation Web : Un blog de cinéma
 ==========
 
-A Symfony project created on October 5, 2015, 6:58 am.
+Ce blog a été réalisé par KOUAME Kevin et SASIBASKARAN Nivaashini avec Symfony et Bootstrap.
