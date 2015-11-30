@@ -39,6 +39,3 @@ nous:
     defaults: { _controller: OCArticleBundle:Advert:nous }
 
 
-test:
-    path:     /test
-    defaults: { _controller: OCArticleBundle:Advert:test }
